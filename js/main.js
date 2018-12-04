@@ -7,14 +7,23 @@ $(document).ready(function(){
 		var section_pos = $(section).position();
 
 		if(section_pos){
-			$(window).scrollTo({top:section_pos.top, left:'0px'}, 1000);
+			//$(window).scrollTo({top:section_pos.top, left:'0px'}, 1000);
+
+			$('html, body').stop().animate({
+            	scrollTop: section_pos.top
+        	}, 1000);
+			
 		}
 		
 	});
 
 	$('.app_link').click(function(e){
 		event.preventDefault();
-		$(window).scrollTo({top:$("#hero").position().top, left:'0px'}, 1000);		
+		//$(window).scrollTo({top:$("#hero").position().top, left:'0px'}, 1000);	
+
+		$('html, body').stop().animate({
+            scrollTop: $("#hero").position().top
+        }, 1000);	
 	});
 
 
